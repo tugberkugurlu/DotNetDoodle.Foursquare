@@ -15,6 +15,11 @@ namespace DotNetDoodle.Foursquare
         private readonly ConcurrentDictionary<Type, object> _clients;
 
         public FoursquareContext(string clientId, string clientSecret, string accessToken)
+            : this(clientId, clientSecret, accessToken, new HttpClientHandler())
+        {
+        }
+
+        public FoursquareContext(string clientId, string clientSecret, string accessToken, HttpMessageHandler messageHandler)
         {
             if (clientId == null)
             {
@@ -31,14 +36,17 @@ namespace DotNetDoodle.Foursquare
                 throw new ArgumentNullException("accessToken");
             }
 
-            VersionAppenderHandler versionAppender = new VersionAppenderHandler();
-            AccessTokenAppenderHandler accessTokenAppender = new AccessTokenAppenderHandler(accessToken);
-            HttpMessageHandler innerHandler = HttpClientFactory.CreatePipeline(
-                new HttpClientHandler(),
-                new DelegatingHandler[] { versionAppender, accessTokenAppender });
+            if (messageHandler == null)
+            {
+                throw new ArgumentNullException("messageHandler");
+            }
 
-            _clients = new ConcurrentDictionary<Type, object>();
+            var versionAppender = new VersionAppenderHandler();
+            var accessTokenAppender = new AccessTokenAppenderHandler(accessToken);
+            var delegatingHandlers = new DelegatingHandler[] { versionAppender, accessTokenAppender };
+            HttpMessageHandler innerHandler = HttpClientFactory.CreatePipeline(messageHandler, delegatingHandlers);
             _client = new HttpClient(innerHandler) { BaseAddress = new Uri(ServiceUri) };
+            _clients = new ConcurrentDictionary<Type, object>();
         }
 
         public IUserClient Users

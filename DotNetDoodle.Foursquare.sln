@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetDoodle.Foursquare", "src\DotNetDoodle.Foursquare\DotNetDoodle.Foursquare.csproj", "{9241DE8C-A095-4AEB-8F6B-B8482AB50F82}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetDoodle.Foursquare.Integration.Tests", "tests\DotNetDoodle.Foursquare.Integration.Tests\DotNetDoodle.Foursquare.Integration.Tests.csproj", "{21ACFD55-23CD-4FEB-B7CE-EE87F92470FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetDoodle.Foursquare.Tests", "tests\DotNetDoodle.Foursquare.Tests\DotNetDoodle.Foursquare.Tests.csproj", "{B26C3630-1AD5-4E4D-B231-71A0F49648E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{21ACFD55-23CD-4FEB-B7CE-EE87F92470FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21ACFD55-23CD-4FEB-B7CE-EE87F92470FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21ACFD55-23CD-4FEB-B7CE-EE87F92470FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B26C3630-1AD5-4E4D-B231-71A0F49648E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B26C3630-1AD5-4E4D-B231-71A0F49648E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B26C3630-1AD5-4E4D-B231-71A0F49648E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B26C3630-1AD5-4E4D-B231-71A0F49648E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
