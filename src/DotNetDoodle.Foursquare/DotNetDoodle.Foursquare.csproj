@@ -39,7 +39,6 @@
     <Compile Include="Clients\ListClient.cs" />
     <Compile Include="Clients\UserClient.cs" />
     <Compile Include="FoursquareContext.cs" />
-    <Compile Include="FoursquareContextExtensions.cs" />
     <Compile Include="Infrastructure\AccessTokenAppenderHandler.cs" />
     <Compile Include="Infrastructure\VersionAppenderHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
